@@ -7,17 +7,17 @@ class Guitarras extends Component {
             <section id="guitarras" className="guitarras contenedor">
                 <h2>Nuestra guitarras</h2>
                 {
-                    this.props.guitarras.map((guitarra) => {
+                    this.props.guitarras.map((guitarra, index) => {
                         return (
-                            <article className="guitarra">
-                                <img className="derecha" src={guitarra.image} alt={guitarra.alt} width="350" />
+                            <article className="guitarra" key={index}>
+                                <img className="guitarra-image" src={guitarra.image} alt={guitarra.alt} width="350" />
                                 <div className="contenedor-guitarra-a">
-                                    <h3 className="title-b">{guitarra.name}</h3>
+                                    <h3 className="guitarra-title">{guitarra.name}</h3>
                                     <ol>
                                         {
-                                            guitarra.features.map((feature) => {
+                                            guitarra.features.map((feature, index) => {
                                                 return (
-                                                    <li>{feature}</li>
+                                                    <li key={index}>{feature}</li>
                                                 )
                                             })
                                         }
