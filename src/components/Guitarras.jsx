@@ -1,8 +1,9 @@
-import React, { Component } from "react"
-import {connect} from "react-redux"
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
-function mapStateToProps(state){
-    return{
+function mapStateToProps(state) {
+    return {
         guitarras: state.guitarras,
     }
 }
@@ -16,19 +17,38 @@ class Guitarras extends Component {
                     this.props.guitarras.map((guitarra, index) => {
                         return (
                             <article className="guitarra" key={index}>
-                                <img className="guitarra-image" src={guitarra.image} alt={guitarra.alt} width="350" />
-                                <div className="contenedor-guitarra-a">
-                                    <h3 className="guitarra-title">{guitarra.name}</h3>
-                                    <ol>
-                                        {
-                                            guitarra.features.map((feature, index) => {
-                                                return (
-                                                    <li key={index}>{feature}</li>
-                                                )
-                                            })
-                                        }
-                                    </ol>
-                                </div>
+
+                                <CSSTransitionGroup
+                                    transitionName="flicker"
+                                    transitionEnterTimeout={500}
+                                    transitionLeaveTimeout={500}
+                                >
+                                    <img className="guitarra-image"
+                                        key={guitarra.image}
+                                        src={guitarra.image}
+                                        alt={guitarra.alt}
+                                        width="350" />
+                                </CSSTransitionGroup>
+
+                                <CSSTransitionGroup
+                                    transitionName="fade"
+                                    transitionEnterTimeout={300}
+                                    /* transitionLeaveTimeout={300}  Para que no haya transicion de salida ponemos el siguiente codigo:  */
+                                    transitionLeave={false}
+                                >
+                                    <div className="contenedor-guitarra" key={guitarra.name}>
+                                        <h3 className="guitarra-title">{guitarra.name}</h3>
+                                        <ol>
+                                            {
+                                                guitarra.features.map((feature, index) => {
+                                                    return (
+                                                        <li key={index}>{feature}</li>
+                                                    )
+                                                })
+                                            }
+                                        </ol>
+                                    </div>
+                                </CSSTransitionGroup>
                             </article>
                         )
                     })
