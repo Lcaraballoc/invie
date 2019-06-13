@@ -8,7 +8,8 @@ import logoPortada from "./images/invie.png";
 import acustica from "./images/invie-acustica.png"
 import clasica from "./images/invie-classic.png"
 
-const data = {
+
+/* const data = {
   menu: [
     {
         href: "index.html",
@@ -22,10 +23,6 @@ const data = {
         href: "precio.html",
         title: "Precios",
     },
-    /* {
-        href: "hola.html",
-        title: "Don't click me",
-    } */
   ],
   logoPortada : logoPortada,
   
@@ -51,15 +48,17 @@ const data = {
       ]
   }
 ]
-}
+} */
 
 
 
 function App() {
   return (
     <div className="Invie">
-      <Portada menu={data.menu} logo={data.logoPortada}/>
-      <Guitarras guitarras={data.guitarras}/>
+      {/* <Portada menu={data.menu} logo={data.logoPortada}/> */}
+      <Portada/>
+      {/* <Guitarras guitarras={data.guitarras}/> */}
+      <Guitarras/>
       <Footer/>
     </div>
   );

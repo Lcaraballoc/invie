@@ -1,5 +1,13 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
+
+function mapStateToProps(state) {
+    return {
+        logo: state.logoPortada,
+        menu: state.menu,
+    }
+}
 
 class Portada extends Component {
     render() {
@@ -12,11 +20,11 @@ class Portada extends Component {
                     <span className="burguer-button icon-menu" id="burguer-button"></span>
                     <nav className="menu" id="menu">
                         <ul>
-                            {this.props.menu.map((item) => {
-                                return(
-                                <li>
-                                    <a href={item.href}>{item.title}</a>
-                                </li>
+                            {this.props.menu.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <a href={item.href}>{item.title}</a>
+                                    </li>
                                 )
                             })}
                             {/* <li>
@@ -38,4 +46,4 @@ class Portada extends Component {
     }
 }
 
-export default Portada;
+export default connect(mapStateToProps)(Portada);
