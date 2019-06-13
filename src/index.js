@@ -15,6 +15,8 @@ import * as serviceWorker from './serviceWorker'
 
 
 const intialState = {
+    isAnimated: false,
+
     menu: [
       {
           href: "index.html",
@@ -73,6 +75,7 @@ function reducer(state, action){
 const store = createStore(reducer, intialState);
 
 const easter = {
+    isAnimated: "is-animated",
     menu: [
         {
             href: "index.html",
