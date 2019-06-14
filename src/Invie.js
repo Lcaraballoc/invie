@@ -4,9 +4,6 @@ import './css/invie.css';
 import Portada from "./components/Portada.jsx";
 import Guitarras from "./components/Guitarras.jsx";
 import Footer from "./components/Footer.jsx";
-import logoPortada from "./images/invie.png";
-import acustica from "./images/invie-acustica.png"
-import clasica from "./images/invie-classic.png"
 
 
 /* const data = {

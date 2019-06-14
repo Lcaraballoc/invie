@@ -5,6 +5,7 @@ import "./css/invie.css"
 import "./css/animation.css"
 import cheet from "cheet.js"
 import logoPortada from "./images/invie.png"
+import logoPlatzi from "./images/platzi.png"
 import acustica from "./images/invie-acustica.png"
 import clasica from "./images/invie-classic.png"
 import easterA from "./images/easter-a.png"
@@ -77,11 +78,9 @@ const store = createStore(reducer, intialState);
 const easter = {
     isAnimated: "is-animated",
     menu: [
-        {
-            href: "index.html",
-            title: "Home",
-        },
+        
       ],
+      logoPortada : logoPlatzi,
       guitarras: [
         {
             image: easterA,
